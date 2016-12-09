@@ -1,7 +1,6 @@
 
 KeyboardEventEmitter = require "KeyboardEventEmitter"
 Event = require "Event"
-hook = require "hook"
 
 capitalizeFirstLetter = (string) ->
   string[0].toUpperCase() + string.slice 1
@@ -15,15 +14,17 @@ eventNames.forEach (eventName) ->
   nativeEvent = "keyboard" + capitalizeFirstLetter eventName
   nativeListener = null
 
-  hook event, "_onAttach", (onAttach) ->
-    onAttach()
+  onAttach = event._onAttach
+  event._onAttach = ->
+    onAttach.apply this, arguments
     if @listenerCount is 1
       nativeListener = KeyboardEventEmitter
         .addListener nativeEvent, event.emit
     return
 
-  hook event, "_onDetach", (onDetach) ->
-    onDetach()
+  onDetach = event._onDetach
+  event._onDetach = ->
+    onDetach.apply this, arguments
     if @listenerCount is 0
       nativeListener.remove()
       nativeListener = null
