@@ -52,9 +52,9 @@ type.defineListeners ->
 type.defineMethods
 
   _relativeKeyboardHeight: (keyboardFrame) ->
-    return 0 unless keyboardFrame and @frame
-    y1 = Math.max @frame.y, keyboardFrame.screenY - @props.keyboardVerticalOffset
-    y2 = Math.min @frame.y + @frame.height, keyboardFrame.screenY + keyboardFrame.height - @props.keyboardVerticalOffset
+    return 0 unless keyboardFrame and @_frame
+    y1 = Math.max @_frame.y, keyboardFrame.screenY - @props.verticalOffset
+    y2 = Math.min @_frame.y + @_frame.height, keyboardFrame.screenY + keyboardFrame.height - @props.verticalOffset
     return Math.max y2 - y1, 0
 
 #
