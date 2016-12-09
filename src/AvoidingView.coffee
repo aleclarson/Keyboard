@@ -62,7 +62,7 @@ type.defineMethods
 #
 
 type.defineProps
-  contentContainerStyle: Style
+  contentStyle: Style
   verticalOffset: Number.withDefault 0
 
 type.render ->
@@ -71,7 +71,13 @@ type.render ->
     mixins: [viewProps]
     onLayout: @_onLayout
     children: View
-      style: [@props.contentContainerStyle, {@bottom}]
+      style: [@props.contentStyle, @styles.content()]
       children: @props.children
+
+type.defineStyles
+
+  content:
+    cover: yes
+    bottom: -> @bottom
 
 module.exports = type.build()
