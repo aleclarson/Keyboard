@@ -25,22 +25,25 @@ type.defineBoundMethods
   _onKeyboardChange: (event) ->
     {duration, easing, endCoordinates} = event
     height = @_relativeKeyboardHeight endCoordinates
+
     if duration and easing
       type = LayoutAnimation.Types[easing] or "keyboard"
       LayoutAnimation.configureNext {duration, update: {duration, type}}
+
     @bottom.set height
+    return
 
   _onLayout: (event) ->
     @_frame = event.nativeEvent.layout
+    return
 
 type.defineListeners ->
-
   if Platform.OS is "ios"
     Keyboard.willChangeFrame @_onKeyboardChange
-
   else
     Keyboard.didHide @_onKeyboardChange
     Keyboard.didShow @_onKeyboardChange
+  return
 
 #
 # Prototype
