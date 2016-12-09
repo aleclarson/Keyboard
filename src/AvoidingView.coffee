@@ -5,7 +5,6 @@ LayoutAnimation = require "LayoutAnimation"
 ReactComponent = require "modx/lib/Component"
 parseOptions = require "parseOptions"
 Platform = require "Platform"
-OneOf = require "OneOf"
 View = require "modx/lib/View"
 
 Keyboard = require "./Keyboard"
