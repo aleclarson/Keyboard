@@ -1,0 +1,26 @@
+{
+  "name": "Keyboard",
+  "version": "1.0.0",
+  "main": "js/index",
+  "plugins": [
+    "lotus-coffee"
+  ],
+  "scripts": {
+    "build": "coffee-build -v 1.11.x -b -o js src",
+    "postinstall": "npm run build"
+  },
+  "implicitDependencies": [
+    "dismissKeyboard",
+    "KeyboardEventEmitter",
+    "LayoutAnimation",
+    "Platform"
+  ],
+  "dependencies": {
+    "Event": "aleclarson/Event#2.2.1",
+    "OneOf": "aleclarson/OneOf#1.0.1",
+    "hook": "aleclarson/hook#1.0.0",
+    "modx": "aleclarson/modx#2.1.0",
+    "parseOptions": "aleclarson/parseOptions#1.0.0",
+    "react-validators": "aleclarson/react-validators#1.0.1"
+  }
+}
