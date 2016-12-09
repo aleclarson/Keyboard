@@ -14,8 +14,6 @@ type = ReactComponent "KeyboardAvoidingView"
 
 type.defineValues
 
-  _root: null
-
   _frame: null
 
 type.defineAnimatedValues
@@ -23,9 +21,6 @@ type.defineAnimatedValues
   bottom: 0
 
 type.defineBoundMethods
-
-  _setRoot: (root) ->
-    @_root = root
 
   _onKeyboardChange: (event) ->
     {duration, easing, endCoordinates} = event
