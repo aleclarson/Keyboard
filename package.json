@@ -16,7 +16,7 @@
     "Platform"
   ],
   "dependencies": {
-    "Event": "aleclarson/Event#2.2.1",
+    "Event": "aleclarson/Event#3.0.0",
     "modx": "aleclarson/modx#2.1.0",
     "parseOptions": "aleclarson/parseOptions#1.0.0",
     "react-validators": "aleclarson/react-validators#1.0.1"

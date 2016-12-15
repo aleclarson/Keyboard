@@ -9,7 +9,7 @@ eventNames = ["willShow", "didShow", "willHide", "didHide", "willChangeFrame"]
 
 eventNames.forEach (eventName) ->
 
-  exports[eventName] = event = Event.sync()
+  exports[eventName] = event = Event()
 
   nativeEvent = "keyboard" + capitalizeFirstLetter eventName
   nativeListener = null
@@ -19,7 +19,7 @@ eventNames.forEach (eventName) ->
     onAttach.apply this, arguments
     if @listenerCount is 1
       nativeListener = KeyboardEventEmitter
-        .addListener nativeEvent, event.emit
+        .addListener nativeEvent, event.bindEmit()
     return
 
   onDetach = event._onDetach
