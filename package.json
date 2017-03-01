@@ -1,6 +1,6 @@
 {
   "name": "Keyboard",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "main": "js/index",
   "plugins": [
     "lotus-coffee"
@@ -16,8 +16,8 @@
     "Platform"
   ],
   "dependencies": {
-    "Event": "aleclarson/Event#3.1.2",
-    "modx": "aleclarson/modx#2.4.1",
+    "Event": "aleclarson/Event#3.2.1",
+    "modx": "aleclarson/modx#2.5.0",
     "parseOptions": "aleclarson/parseOptions#1.0.0",
     "react-validators": "aleclarson/react-validators#1.0.1"
   }
